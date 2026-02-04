@@ -68,42 +68,6 @@ CHAT_ID=your-telegram-chat-id-here
 python gold_telegram_bot.py
 ```
 
-## Deploy to Render.com
-
-### Step 1: Push to GitHub
-
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-> ⚠️ **Important**: Your `.env` file is NOT pushed to GitHub (it's in `.gitignore`). Your credentials are safe!
-
-### Step 2: Create Render Service
-
-1. Go to [render.com](https://render.com) and sign up
-2. Click **New** → **Background Worker**
-3. Connect your GitHub repository
-4. Configure the service:
-   - **Name**: gold-telegram-bot
-   - **Runtime**: Python 3
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `python gold_telegram_bot.py`
-
-### Step 3: Add Environment Variables
-
-In Render dashboard, go to **Environment** tab and add:
-
-| Key | Value |
-|-----|-------|
-| `BOT_TOKEN` | Your Telegram bot token |
-| `CHAT_ID` | Your Telegram group ID |
-
-### Step 4: Deploy
-
-Click **Create Background Worker**. The bot will start automatically!
-
 ## Files
 
 ```
